@@ -1,5 +1,3 @@
-import { selectors } from "./selectors"
-
 export function makeMarkup(searchData) {
     const result = searchData.map (item => `<div class="photo-card">
   <img src="${item.webformatURL}" alt="${item.tags}" loading="lazy" />

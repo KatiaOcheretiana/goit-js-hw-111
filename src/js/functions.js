@@ -37,7 +37,6 @@ export async function onSubmitSearch(evt) {
             selectors.loadMore.classList.remove('hidden')
         }
   } catch (error) {
-      console.log(error);
 Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.")
   }
 }
@@ -49,8 +48,6 @@ export async function onLoadMore() {
     try {
         const loadMoreData = await searchApiData(searchItem, page)
         totalPages = Math.ceil(loadMoreData.totalHits / limit);
-        console.log(loadMoreData.totalHits / limit);
-        console.log(page);
            if (page === totalPages) {
          selectors.loadMore.classList.add('hidden')
                Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
